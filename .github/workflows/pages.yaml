@@ -32,11 +32,7 @@ jobs:
       - uses: erickzanardo/flutter-gh-pages@v7
         with:
           baseHref: /testWeb/
-      - uses: actions/upload-artifact@v2.2.4
-        if: ${{ always() }}
-        with:
-         name: tests-log.${{ runner.os }}
-         path: "**/reports/*"
+      - uses: actions/upload-artifact@v3
 
   # Deployment job
   deploy:
