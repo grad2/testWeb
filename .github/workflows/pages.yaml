@@ -32,7 +32,7 @@ jobs:
       - uses: erickzanardo/flutter-gh-pages@v7
         with:
           baseHref: /testWeb/
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-pages-artifact@v1
 
   # Deployment job
   deploy:
