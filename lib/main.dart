@@ -15,19 +15,34 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePage();
+}
+
+class _MyHomePage extends State<MyHomePage> {
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
       body: Center(
-        child: Container(
-          height: 50,
-          width: 50,
-          color: Colors.green,
+        child: InkWell(
+          onTap: () {
+            setState(() {
+              ++count;
+            });
+          },
+          child: Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: 50,
+            color: Colors.green,
+            child: Text(count.toString()),
+          ),
         )
       ),
     );
