@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled1/main_block.dart';
+import 'package:untitled1/test_screen.dart';
 
 import 'di/di.dart';
 
@@ -44,7 +45,15 @@ class MyHomePage extends StatelessWidget {
           backgroundColor: Colors.red,
           body: Center(
             child: InkWell(
-              onTap: () => block.countPlus(),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const TestScreen(),
+                  ),
+                );
+              },
               child: Container(
                 alignment: Alignment.center,
                 height: 50,
