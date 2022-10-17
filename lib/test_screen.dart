@@ -6,8 +6,11 @@ class TestScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return const Scaffold(
-      backgroundColor: Colors.white,
+    return GestureDetector(
+      onTap: () => Navigator.of(context).pop(),
+      child: const Scaffold(
+        backgroundColor: Colors.white,
+      ),
     );
   }
 
